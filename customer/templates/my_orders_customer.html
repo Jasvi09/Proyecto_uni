@@ -1,0 +1,230 @@
+{% extends 'base_customer.html' %}
+
+{% block contenido %}
+
+    {% comment %} <h1>Inicio - Customer</h1>
+
+    {% for order in impresiones %}
+
+    <ul>
+        <li>{{ order.name }}</li>
+        <li>{{ order.amount }}</li>
+        <li>{{ order.type_of_paper }}</li>
+        <li>{{ order.formats }}</li>
+        <li>{{ order.color }}</li>
+        <li>{{ order.others }}</li>
+        <li>{{ order.status }}</li>
+        {% if order.status == 'Pendiente' %}
+        <li><a href="{% url 'cancel_orders_customer' order.name order.id %}">Cancelar{{order.id}}</a></li>
+        {% endif %}
+    </ul>
+
+    {% endfor %}
+
+    {% for order in arquitecturas %}
+
+    <ul>
+        <li>{{ order.name }}</li>
+        <li>{{ order.desing }}</li>
+        <li>{{ order.architectural_proposal  }}</li>
+        <li>{{ order.others }}</li>
+        <li>{{ order.status }}</li>
+        {% if order.status == 'Pendiente' %}
+        <li><a href="{% url 'cancel_orders_customer' order.name order.id %}">Cancelar{{order.id}}</a></li>
+        {% endif %}
+    </ul>
+
+    {% endfor %} {% endcomment %}
+
+    <section class="relative py-14">
+        <div class="absolute inset-0 max-w-xs mx-auto h-44 blur-[118px]" style="background: linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%);"></div>
+        <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+          <div class="relative max-w-2xl">
+            <div class="relative z-10 flex justify-start items-center">
+              <svg class="w-7 h-7 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1025 1024">
+                <path fill="#4f46e5" d="M960.428 576h-512q-27 0-45.5-19t-18.5-45.5t18.5-45t45.5-18.5h512q27 0 45.5 18.5t18.5 45t-18.5 45.5t-45.5 19m0-384h-512q-27 0-45.5-19t-18.5-45.5t18.5-45t45.5-18.5h512q27 0 45.5 18.5t18.5 45t-18.5 45.5t-45.5 19m-832 832q-53 0-90.5-37.5T.428 896t37.5-90.5t90.5-37.5t90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5m0-384q-53 0-90.5-37.5T.428 512t37.5-90.5t90.5-37.5t90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5m0-384q-53 0-90.5-37.5T.428 128t37.5-90.5t90.5-37.5t90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5m320 576h512q27 0 45.5 18.5t18.5 45.5t-18.5 45.5t-45.5 18.5h-512q-27 0-45.5-18.5t-18.5-45.5t18.5-45.5t45.5-18.5"></path>
+              </svg>
+              <h3 class="pb-1 text-gray-800 text-3xl font-semibold sm:text-4xl">Ordenes</h3>
+            </div>
+          </div>
+          <div dir="ltr" data-orientation="horizontal" class="max-w-screen-xl mx-auto  mt-12"">
+            <div role="tablist" aria-orientation="horizontal" class="w-full border-b flex items-center gap-x-3 overflow-x-auto text-sm" aria-label="Manage your account" tabindex="0" data-orientation="horizontal" style="outline: none;">
+               <button type="button" role="tab" aria-selected="true" aria-controls="radix-:r12:-content-Overview" data-state="active" id="radix-:r12:-trigger-Overview" class="group outline-none py-1.5 border-b-2 border-white text-gray-500 data-[state=active]:border-indigo-600 data-[state=active]:text-indigo-600" tabindex="0" data-orientation="horizontal" data-radix-collection-item="">
+                  <div class="flex items-center gap-x-2 py-1.5 px-3 rounded-lg duration-150 group-hover:text-indigo-600 group-hover:bg-gray-50 group-active:bg-gray-100 font-medium">
+<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="#4f46e5" d="M243.58 72.84L197.29 49.7C191.54 39.24 177.21 32 160 32c-22.43 0-40 12.3-40 28a20.8 20.8 0 0 0 1.06 6.53l-19.52 9.76A53.7 53.7 0 0 0 80 72c-22.43 0-40 12.3-40 28a20.8 20.8 0 0 0 1.06 6.53l-28.64 14.31A8 8 0 0 0 8 128v64a8 8 0 0 0 4.42 7.16l64 32a8 8 0 0 0 7.16 0l160-80A8 8 0 0 0 248 144V80a8 8 0 0 0-4.42-7.16M80 151.06L33.89 128L51 119.45c7.24 5.29 17.48 8.55 29 8.55c22.43 0 40-12.3 40-28a21.77 21.77 0 0 0-4.35-12.88L131 79.45c7.24 5.29 17.48 8.55 29 8.55c18.38 0 33.49-8.26 38.35-19.88L222.11 80ZM160 48c13.74 0 24 6.34 24 12s-10.26 12-24 12s-24-6.34-24-12s10.26-12 24-12M80 88c13.74 0 24 6.34 24 12s-10.26 12-24 12c-9.67 0-17.61-3.14-21.47-7a8 8 0 0 0-.84-.93A6.62 6.62 0 0 1 56 100c0-5.66 10.26-12 24-12m-56 52.94l48 24v46.12l-48-24Zm64 70.12v-46.12l144-72v46.12Z"/></svg>
+                     Arquitectura
+                  </div>
+               </button>
+               <button type="button" role="tab" aria-selected="false" aria-controls="radix-:r12:-content-Integration" data-state="inactive" id="radix-:r12:-trigger-Integration" class="group outline-none py-1.5 border-b-2 border-white text-gray-500 data-[state=active]:border-indigo-600 data-[state=active]:text-indigo-600" tabindex="-1" data-orientation="horizontal" data-radix-collection-item="">
+                  <div class="flex items-center gap-x-2 py-1.5 px-3 rounded-lg duration-150 group-hover:text-indigo-600 group-hover:bg-gray-50 group-active:bg-gray-100 font-medium">
+                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><g fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 11h2a1 1 0 0 0 1-1V5.5a1 1 0 0 0-1-1h-11a1 1 0 0 0-1 1V10a1 1 0 0 0 1 1h2"/><path d="M3.5 9.5V13a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5V9.5zm7-5V1a.5.5 0 0 0-.5-.5H4a.5.5 0 0 0-.5.5v3.5M11 7h-1"/></g></svg>
+Impresiones
+                  </div>
+               </button>
+            </div>
+            <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r12:-trigger-Overview" id="radix-:r12:-content-Overview" tabindex="0" class="py-6">
+        <div class="relative mt-12">
+            <div class="items-start justify-between md:flex"><div class="max-w-lg"><h3 class="text-indigo-600 text-xl font-bold sm:text-2xl">Ordenes de Arquitectura</h3></div></div>
+            <div class="mt-12 relative h-max overflow-auto">
+                <table class="w-full table-auto text-sm text-left">
+                <thead class="text-gray-600 font-medium border-b">
+                    <tr>
+                        <th class="py-3 pr-6">Fecha</th>
+                        <th class="py-3 pr-6">Diseño</th>
+                        <th class="py-3 pr-6">Propuesta Arquitectonica</th>
+                        <th class="py-3 pr-6">Otros</th>
+                        <th class="py-3 pr-6">Estatus</th>
+                        <th class="py-3 pr-6"></th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 divide-y">
+                    {% for arqui in arquitecturas %}
+                    <tr>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.creation_date }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.desing }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.architectural_proposal  }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.others }}</td>        
+
+                        {% if arqui.status == 'Pendiente' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-purple-600 text-purple-100">{{arqui.status}}</span>
+                            </td>
+                        {% elif arqui.status == 'En proceso' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-indigo-600 text-indigo-100">{{arqui.status}}</span>
+                            </td>   
+                        {% elif arqui.status == 'Cancelado' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-rose-600 text-rose-100">{{arqui.status}}</span>
+                            </td>  
+                            {% elif arqui.status == 'Completado' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-green-600 text-green-100">{{arqui.status}}</span>
+                            </td>  
+                        {% endif %}
+
+
+                        {% if arqui.status == 'Pendiente' %}
+                            <td class="text-right whitespace-nowrap">
+                                <a href="{% url 'cancel_orders_customer' arqui.name arqui.id %}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg" rel="nofollow">Cancelar</a>
+                            </td>
+                        {% elif arqui.status == 'En proceso' %}
+                            <td class="text-right whitespace-nowrap">
+                                <a href="{% url 'cancel_orders_customer' arqui.name arqui.id %}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg" rel="nofollow">Cancelar</a>
+                            </td>
+                        {% endif %}
+
+                    </tr>                   
+                    {% endfor %}
+                </tbody>
+                </table>
+
+            </div>  
+          </div>
+            </div>
+            <div data-state="inactive" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-:r12:-trigger-Integration" id="radix-:r12:-content-Integration" tabindex="0" class="py-6 hidden">
+          <div class="relative mt-12">
+            <div class="items-start justify-between md:flex"><div class="max-w-lg"><h3 class="text-indigo-600 text-xl font-bold sm:text-2xl">Ordenes de Impresiones</h3></div></div>
+            <div class="mt-12 relative h-max overflow-auto">
+                <table class="w-full table-auto text-sm text-left">
+                <thead class="text-gray-600 font-medium border-b">
+                    <tr>
+                        <th class="py-3 pr-6">Fecha</th>
+                        <th class="py-3 pr-6">Cantidad</th>
+                        <th class="py-3 pr-6">Formato</th>
+                        <th class="py-3 pr-6">Tipo De Papel</th>
+                        <th class="py-3 pr-6">Color</th>
+                        <th class="py-3 pr-6">Otros</th>
+                        <th class="py-3 pr-6">Estatus</th>
+                        <th class="py-3 pr-6"></th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 divide-y">
+                    {% for arqui in impresiones %}
+                    <tr>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.creation_date }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.amount }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.formats  }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.type_of_paper  }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.color  }}</td>
+                        <td class="pr-6 py-4 whitespace-nowrap">{{ arqui.others }}</td>
+                        {% comment %} <td class="pr-6 py-4 whitespace-nowrap"><span class="px-3 py-2 rounded-full font-semibold text-xs text-blue-600 bg-blue-50">{{arqui.status}}</span></td> {% endcomment %}
+                        
+                        
+
+                        {% if arqui.status == 'Pendiente' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-purple-600 text-purple-100">{{arqui.status}}</span>
+                            </td>
+                        {% elif arqui.status == 'En proceso' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-indigo-600 text-indigo-100">{{arqui.status}}</span>
+                            </td>   
+                        {% elif arqui.status == 'Cancelado' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-rose-600 text-rose-100">{{arqui.status}}</span>
+                            </td>  
+                            {% elif arqui.status == 'Completado' %}
+                            <td class="pr-6 py-4 whitespace-nowrap">
+                                <span class="px-3 py-2 rounded-full font-semibold text-xs bg-green-600 text-green-100">{{arqui.status}}</span>
+                            </td>  
+                        {% endif %}
+
+
+                        {% if arqui.status == 'Pendiente' %}
+                            <td class="text-right whitespace-nowrap">
+                                <a href="{% url 'cancel_orders_customer' arqui.name arqui.id %}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg" rel="nofollow">Cancelar</a>
+                            </td>
+                        {% elif arqui.status == 'En proceso' %}
+                            <td class="text-right whitespace-nowrap">
+                                <a href="{% url 'cancel_orders_customer' arqui.name arqui.id %}" class="py-1.5 px-3 text-gray-600 hover:text-gray-500 duration-150 hover:bg-gray-50 border rounded-lg" rel="nofollow">Cancelar</a>
+                            </td>
+                        {% endif %}
+            
+                    </tr>                   
+                    {% endfor %}
+                </tbody>
+                </table>
+
+            </div>  
+          </div>                
+            </div>
+         </div>
+
+
+        </div>
+      </section>
+    
+      <script>
+        
+        const buttons = document.querySelectorAll('.group'); // Select all buttons
+
+        buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Handle button click logic
+
+            // 1. Extract clicked button ID
+            const clickedButtonId = this.id.split('-').pop();
+
+            // 2. Hide all content sections
+            const contentSections = document.querySelectorAll('[data-orientation="horizontal"] [role="tabpanel"]');
+            contentSections.forEach(section => section.classList.add('hidden'));
+
+            // 3. Show the content section that matches the clicked button's ID
+            const contentToShow = document.getElementById(`radix-:r12:-content-${clickedButtonId}`);
+            contentToShow.classList.remove('hidden');
+
+            // 4. Update button styling (active/inactive states)
+            buttons.forEach(otherButton => {
+            otherButton.classList.remove('data-[state=active]:border-indigo-600', 'data-[state=active]:text-indigo-600'); // Remove active styles from all buttons
+            otherButton.setAttribute('data-state', 'inactive'); // Set all buttons to inactive
+            });
+            this.classList.add('data-[state=active]:border-indigo-600', 'data-[state=active]:text-indigo-600'); // Add active styles to the clicked button
+            this.setAttribute('data-state', 'active'); // Set the clicked button to active
+        });
+        });
+
+
+      </script>
+
+{% endblock %}

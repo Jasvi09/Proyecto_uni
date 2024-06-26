@@ -1,0 +1,63 @@
+{% extends 'base_business.html' %}
+
+{% block contenido %}
+  <section class="relative py-14">
+    <div class="absolute inset-0 max-w-xs mx-auto h-44 blur-[118px]" style="background: linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%);"></div>
+    <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+      <div class="relative max-w-2xl">
+        <div class="relative z-10 flex justify-start items-center">
+          <svg class="w-9 h-9 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#4f46e5" d="M4 11q-.425 0-.712-.288T3 10V4q0-.425.288-.712T4 3h6q.425 0 .713.288T11 4v6q0 .425-.288.713T10 11zm1-6v4zm9 6q-.425 0-.712-.288T13 10V4q0-.425.288-.712T14 3h6q.425 0 .713.288T21 4v6q0 .425-.288.713T20 11zm1-6v4zM4 21q-.425 0-.712-.288T3 20v-6q0-.425.288-.712T4 13h6q.425 0 .713.288T11 14v6q0 .425-.288.713T10 21zm1-6v4zm12 6q-.425 0-.712-.288T16 20v-2h-2.025q-.425 0-.7-.288T13 17t.288-.712T14 16h2v-2.025q0-.425.288-.7T17 13t.713.288T18 14v2h2.025q.425 0 .7.288T21 17t-.288.713T20 18h-2v2.025q0 .425-.288.7T17 21M15 5v4h4V5zM5 5v4h4V5zm0 10v4h4v-4z"/></svg>
+          <h3 class="pb-1 text-gray-800 text-3xl font-semibold sm:text-4xl">Dashboard</h3>
+        </div>
+      </div>
+      <div class="relative mt-12">
+        <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+          <li class="bg-white border rounded-lg">
+            <a href="{% url 'add_my_services_business' %}" class="py-8 flex w-full h-full justify-center items-center hover:bg-indigo-100 transition duration-300 rounded-lg"\>
+              <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24"><g fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12.483 20.935c-.862.239-1.898-.178-2.158-1.252a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37c1 .608 2.296.07 2.572-1.065c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.08.262 1.496 1.308 1.247 2.173M16 19h6m-3-3v6"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/></g></svg>
+              </div>
+              
+              <h4 class="text-lg text-gray-800 font-semibold">Añadir Servicio</h4>
+            </a>
+          </li>
+          <li class="bg-white border rounded-lg">
+            <a href="{% url 'my_services_business' %}" class="py-8 flex w-full h-full justify-center items-center hover:bg-indigo-100 transition duration-300 rounded-lg"\>
+              <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#4f46e5" fill-rule="evenodd" d="M4.5 5.25a3.25 3.25 0 0 1 6.398-.811a.75.75 0 0 0 .702.563a3 3 0 0 1 1.94.798c.591.549.96 1.33.96 2.2A.75.75 0 0 0 16 8a4.5 4.5 0 0 0-1.44-3.3a4.5 4.5 0 0 0-2.373-1.148a4.751 4.751 0 0 0-9.184 1.522A3.751 3.751 0 0 0 3.75 12.5h.5a.75.75 0 0 0 0-1.5h-.5a2.25 2.25 0 0 1-.002-4.5h.03a.75.75 0 0 0 .747-.843A3 3 0 0 1 4.5 5.25m8.509 5.939a2.22 2.22 0 0 1-1.66-2.138l-.68-.256a2.38 2.38 0 0 1-2.748.816l-.406.569c.57.788.57 1.87 0 2.657l.406.569a2.38 2.38 0 0 1 2.747.816l.68-.255a2.22 2.22 0 0 1 1.66-2.139v-.639Zm-.113-2.396a.715.715 0 0 0-.418-.921l-1.798-.674a.865.865 0 0 0-1.114.506a.87.87 0 0 1-1.32.395a.884.884 0 0 0-1.23.2L5.94 9.805a.77.77 0 0 0 .18 1.076c.43.307.43.948 0 1.255a.77.77 0 0 0-.18 1.076l1.076 1.506a.884.884 0 0 0 1.23.2a.87.87 0 0 1 1.32.395a.865.865 0 0 0 1.114.506l1.798-.674a.715.715 0 0 0 .418-.92a.715.715 0 0 1 .67-.966h.134a.81.81 0 0 0 .809-.809v-1.883a.81.81 0 0 0-.809-.808h-.134a.715.715 0 0 1-.67-.966m-1.833 2.709a1.052 1.052 0 1 1-2.103 0a1.052 1.052 0 0 1 2.103 0" clip-rule="evenodd"/></svg>
+              </div>
+              <h4 class="text-lg text-gray-800 font-semibold">Mis Servicios</h4>
+            </a>
+          </li>
+          <li class="bg-white border rounded-lg">
+            <a href="{% url 'orders_business' %}" class="py-8 flex w-full h-full justify-center items-center hover:bg-indigo-100 transition duration-300 rounded-lg">
+              <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1025 1024">
+                  <path fill="#4f46e5" d="M960.428 576h-512q-27 0-45.5-19t-18.5-45.5t18.5-45t45.5-18.5h512q27 0 45.5 18.5t18.5 45t-18.5 45.5t-45.5 19m0-384h-512q-27 0-45.5-19t-18.5-45.5t18.5-45t45.5-18.5h512q27 0 45.5 18.5t18.5 45t-18.5 45.5t-45.5 19m-832 832q-53 0-90.5-37.5T.428 896t37.5-90.5t90.5-37.5t90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5m0-384q-53 0-90.5-37.5T.428 512t37.5-90.5t90.5-37.5t90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5m0-384q-53 0-90.5-37.5T.428 128t37.5-90.5t90.5-37.5t90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5m320 576h512q27 0 45.5 18.5t18.5 45.5t-18.5 45.5t-45.5 18.5h-512q-27 0-45.5-18.5t-18.5-45.5t18.5-45.5t45.5-18.5" />
+                </svg>
+              </div>
+              <h4 class="text-lg text-gray-800 font-semibold">Ordenes</h4>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+
+    {% if order_pending == True %}
+
+          new AWN().info('Hay Ordenes Pendientes, <a class="text-blue-600 hover:text-blue-800 font-semibold" href="{% url 'orders_business' %}">Haz clic aqui para verlas</a> ', { 
+            durations: {info: 5000}, 
+            labels: {info: "Información"}, 
+            icons: {    prefix: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="#2563eb" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/>',
+                        suffix: '</svg>',}
+          })
+
+    {% endif %}
+
+  </script>
+{% endblock %}

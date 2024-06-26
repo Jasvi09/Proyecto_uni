@@ -1,0 +1,41 @@
+{% extends 'base_business.html' %}
+
+{% block contenido %}
+
+    {% comment %} <h1>Inicio - Add My Service Business</h1>
+
+    {{error}}
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button>Crear</button>
+    </form> {% endcomment %}
+
+    <main class="w-full h-[450px] flex flex-col items-center justify-center px-4">
+        <div class="max-w-sm w-full text-gray-600 space-y-5">
+          <div class="text-center pb-8">
+            <div class="mt-5 flex justify-center items-center">
+                <svg class="w-9 h-9 mr-2" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24"><g fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12.483 20.935c-.862.239-1.898-.178-2.158-1.252a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37c1 .608 2.296.07 2.572-1.065c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.08.262 1.496 1.308 1.247 2.173M16 19h6m-3-3v6"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0"/></g></svg>
+              <h2 class="text-gray-800 text-2xl font-semibold sm:text-3xl">Añadir Servicio</h2>
+            </div>
+          </div>
+          <form class="space-y-5" form action="" method="POST">
+            {{ error }}
+            {% csrf_token %}
+            <div>
+              <label class="font-medium">Nombre</label>
+              {{form.name}}
+            </div>
+            <div>
+                <label class="font-medium">Captcha</label>
+                <div class="w-full mt-2 px-3 py-2 flex justify-center items-center">
+                  {{form.captcha}}
+                </div>
+            </div>
+            <button class="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">Guardar Servicio</button>
+          </form>
+          </p>
+        </div>
+      </main>
+
+{% endblock %}

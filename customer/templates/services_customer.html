@@ -1,0 +1,57 @@
+{% extends 'base_customer.html' %}
+
+{% block contenido %}
+
+    {% comment %} <h1>Inicio - Customer</h1>
+
+    {% for service in services %}
+
+    {% if service.is_active == True  %}
+        <ul>
+            <li>{{ service.name }}</li>
+            <li>{{ service.description }}</li>
+            <a href="{% url 'seleccionar_pedido' service.id %}">{{service.id}}</a>
+            <li><a href="{% url 'add_orders_customer' service.name service.id %}">Tomar {{service.id}}</a></li>
+        </ul>
+    {% endif %}
+
+
+    {% endfor %} {% endcomment %}
+
+    <section class="relative py-14">
+        <div class="absolute inset-0 max-w-xs mx-auto h-44 blur-[118px]" style="background: linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%);"></div>
+        <div class="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+          <div class="relative max-w-2xl">
+            <div class="relative z-10 flex justify-start items-center">
+                <svg class="w-11 h-11 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M11.646 20.965a1.67 1.67 0 0 1-1.321-1.282a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37c1 .608 2.296.07 2.572-1.065c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c.728.177 1.154.71 1.279 1.303"/><path d="M14.985 11.694a3 3 0 1 0-3.29 3.29M15 18a3 3 0 1 0 6 0a3 3 0 1 0-6 0m5.2 2.2L22 22"/></g>
+                </svg>
+              <h3 class="pb-1 text-gray-800 text-3xl font-semibold sm:text-4xl">Ver Servicios</h3>
+            </div>
+          </div>
+          <div class="relative mt-12">
+            <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {% for service in services %}
+
+              {% if service.is_active == True  %}
+
+                <li class="bg-white border rounded-lg">
+                    <a href="{% url 'add_orders_customer' service.name service.id %}" class="p-8 w-full h-full hover:bg-indigo-100 transition duration-300 rounded-lg flex flex-col justify-between items-center  ">
+                
+                    <p class="flex justify-center items-center gap-x-1 text-2xl font-semibold text-indigo-600">
+                        <span class="mb-1">{{ service.name }}</span>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#4f46e5" d="m14.475 12l-7.35-7.35q-.375-.375-.363-.888t.388-.887t.888-.375t.887.375l7.675 7.7q.3.3.45.675t.15.75t-.15.75t-.45.675l-7.7 7.7q-.375.375-.875.363T7.15 21.1t-.375-.888t.375-.887z"/></svg></p> 
+
+                    {% comment %} <a href="{% url 'add_orders_customer' service.name service.id %}" class="flex items-center justify-center gap-x-1 py-2 px-4 text-white bg-indigo-600 hover:bg-indigo-400 active:bg-indigo-400 rounded-lg md:inline-flex" rel="nofollow">Solicitar<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentcolor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path></svg></a>
+                   {% endcomment %}
+                    </a>
+                </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% tailwind_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <title>Nombre de la aplicación</title>
+  </head>
+  <body>
+    {% comment %} <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Button</button>
+    <li>
+      <a href="{% url 'log_in_customer' %}">Customer</a>
+    </li>
+    <li>
+      <a href="{% url 'log_in_business' %}">Business</a>
+    </li> {% endcomment %}
+
+    <div class="relative">
+      <div class="absolute inset-0 blur-xl h-[680px]" style="background: linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%);"></div>
+      <div class="relative">
+        <nav class="w-full border-b md:border-0">
+          <div class="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8 justify-between">
+            <div class="flex items-center justify-between py-3 md:py-5 md:block">
+              <a href="" rel="nofollow"><img src="https://www.floatui.com/logo.svg" width="120" height="50" alt="Float UI logo" /></a><div class="md:hidden">
+                <button class="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="hidden md:inline-block">
+              <a href="#comenzar" class="py-2 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow" rel="nofollow">Comenzar</a>
+            </div>
+          </div>
+        </nav>
+        <section>
+          <div class="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
+            <div class="flex-none space-y-5 max-w-xl">
+              <a href="#comenzar" class="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white" rel="nofollow">
+                <span class="inline-block rounded-full px-3 py-1 bg-indigo-600 text-white">Empieza Ya</span><p class="flex items-center">
+                  ¿Que Estas Esperando?<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
+                  </svg>
+                </p>
+              </a><h1 class="text-4xl text-gray-800 font-extrabold sm:text-5xl">Conectando Client@s y Arquitect@s para Desarrollar Espacios Extraordinarios.</h1><p>Bienvenidos a la plataforma donde la innovación arquitectónica se encuentra con tus necesidades. Ya seas un arquitecto buscando expandir tu alcance profesional o un cliente en busca de servicios arquitectónicos de calidad, has llegado al lugar correcto.</p>
+              <div class="flex items-center gap-x-3 sm:text-sm">
+                <a href="#comenzar" class="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex" rel="nofollow">
+                  Comenzar<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="flex-1 hidden md:block">
+              <img src="https://raw.githubusercontent.com/sidiDev/remote-assets/c86a7ae02ac188442548f510b5393c04140515d7/undraw_progressive_app_m-9-ms_oftfv5.svg" class="max-w-xl" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+      <div id="comenzar" class="relative a p-10">
+      <div class="absolute inset-0 blur-xl h-[684px]" style="background: linear-gradient(170deg, rgba(192, 132, 252, 0) 20%, rgba(232, 121, 249, 0.26) 70%, rgba(204, 171, 238, 0) 100%);"></div>
+      <div class="relative">
+        <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+          <div class="space-y-5 sm:text-center sm:max-w-md sm:mx-auto">
+            <h1 class="text-gray-800 text-3xl font-extrabold sm:text-4xl">Comienza Ahora</h1><p class="text-gray-600">¿Que Esperas?, regístrate y comienza a disfrutar de nuestras soluciónes en línea.</p></div>
+          </div>
+          <ul class="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-2 max-w-screen-lg mx-auto">
+            <div class="bg-white relative flex-1 flex items-stretch flex-col rounded-xl border-1 w-full mx-auto group sm:max-w-sm">
+              <div class="p-8 py-8 space-y-3">
+                <h3 class="text-indigo-600 text-2xl font-semibold">Client@s</h3>
+                <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 256 256"><g fill="#4f46e5"><path d="M192 96a64 64 0 1 1-64-64a64 64 0 0 1 64 64" opacity=".2"/><path d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8M72 96a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56"/></g></svg>
+                <p class="text-gray-600 text-sm duration-150 group-hover:text-gray-800">Si eres un cliente en busca de servicios arquitectónicos, inicia sesión aquí para explorar una variedad de opciones y conectar con arquitectos profesionales que pueden ayudarte con tus proyectos de construcción o reforma.</p>
+              </div>
+              <div class="flex-1 flex items-end p-8 pt-1">
+                <a href="{% url 'log_in_customer' %}" class="text-center px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700">Iniciar Sesión</a>
+              </div>
+           </div>
+
+           <div class="bg-white relative flex-1 flex items-stretch flex-col rounded-xl border-1 w-full mx-auto group sm:max-w-sm">
+            <div class="p-8 py-8 space-y-3">
+              <h3 class="text-indigo-600 text-2xl font-semibold">Arquitect@s</h3>
+              <svg class='mx-auto' xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><g fill="none" stroke="#4f46e5" stroke-width="1.5"><path d="M3 8.71c0-1.474 0-2.21.393-2.64a1.5 1.5 0 0 1 .497-.36c.532-.236 1.231-.003 2.629.463c1.067.356 1.6.534 2.14.515a3 3 0 0 0 .588-.078c.525-.125.993-.437 1.929-1.06l1.382-.922c1.2-.8 1.799-1.2 2.487-1.291c.688-.093 1.372.135 2.739.591l1.165.388c.99.33 1.485.495 1.768.888c.283.393.283.915.283 1.958v8.129c0 1.473 0 2.21-.393 2.64a1.5 1.5 0 0 1-.497.358c-.532.237-1.231.004-2.629-.462c-1.067-.356-1.6-.534-2.14-.515a3.001 3.001 0 0 0-.588.078c-.525.125-.993.437-1.929 1.06l-1.382.922c-1.2.8-1.799 1.2-2.487 1.291c-.688.093-1.372-.135-2.739-.591l-1.165-.388c-.99-.33-1.485-.495-1.768-.888C3 18.403 3 17.88 3 16.838z"/><path d="M9 6.639V20.5M15 3v14" opacity=".5"/></g></svg>
+              <p class="text-gray-600 text-sm duration-150 group-hover:text-gray-800">¿Eres un arquitecto? Únete a nuestra comunidad y amplía tu red profesional. Muestra tus habilidades, colabora en emocionantes proyectos y descubre nuevas oportunidades en el mundo de la arquitectura.</p>
+            </div>
+            <div class="flex-1 flex items-end p-8 pt-1">
+                <a href="{% url 'log_in_business' %}" class="text-center px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700">Iniciar Sesión</a>
+            </div>
+         </div>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="">
+      <div class="mt-10 py-10 border-t md:text-center">
+        <p>© 2022 Float UI Inc. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
